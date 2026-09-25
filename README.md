@@ -94,7 +94,7 @@ networks.
 При необходимости прикрепитe сюда скриншоты
 ![Запуск контейнеров](<https://github.com/user-attachments/assets/27f08962-a9c4-41a9-b9ae-88c8cd21114b />
 )
-![Компоуз с графаной](<https://github.com/user-attachments/assets/583a45ad-950a-49a0-8fbd-ebd3aa845a9a" />)
+![Компоуз с графаной](<https://github.com/user-attachments/assets/583a45ad-950a-49a0-8fbd-ebd3aa845a9a />)
 
 ### Задание 4
 
