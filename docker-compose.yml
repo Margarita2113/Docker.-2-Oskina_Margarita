@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  pushgateway:
+    image: prom/pushgateway:latest
+    container_name: oskina-mr-netology-pushgateway
+    ports:
+      - "9091:9091"
+    networks:
+      - oskina-mr-my-netology-hw
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: oskina-mr-netology-prometheus
+    volumes:
+      - ./home/rita/study/Docker.-2-Oskina_Margarita/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - oskina-mr-my-netology-hw
+
+   grafana:
+    image: grafana/grafana:latest
+    container_name: oskina-m-netology-grafana
+    volumes:
+      - ./home/rita/study/Docker.-2-Oskina_Margarita/grafana/custom.ini
+      - grafana-data:/var/lib/grafana
+    environment:
+      - GF_PATHS_CONFIG=/etc/grafana/custom.ini
+    ports:
+      - "80:3000"
+    networks:
+      - oskina-mr-my-netology-hw
+
+volumes:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  oskina-mr-my-netology-hw:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+
